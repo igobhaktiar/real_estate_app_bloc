@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "261240129380",
+    "project_id": "asctest-1c4af",
+    "storage_bucket": "asctest-1c4af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261240129380:android:0b0e91da221b65dfc65c71",
+        "android_client_info": {
+          "package_name": "com.firgobhaktiar.asctest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLnvuPPVMY3LIyta2Y4XKsSRidmW33qVY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
