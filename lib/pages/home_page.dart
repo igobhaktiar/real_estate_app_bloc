@@ -2,7 +2,6 @@ import 'package:asc_test/styles/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iconly/iconly.dart';
 import 'package:ionicons/ionicons.dart';
 
 class HomePage extends StatefulWidget {
@@ -31,9 +30,19 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         height: 50,
                         width: 50,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.green,
+                          shape: BoxShape.circle,
+                        ),
+                        child: ClipRRect(
                           borderRadius: BorderRadius.circular(50),
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset('images/profile.png',
+                            fit: BoxFit.cover,),
+                          ),
                         ),
                       ),
                       const SizedBox(width: 12),

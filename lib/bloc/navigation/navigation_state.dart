@@ -6,3 +6,5 @@ abstract class NavigationState {}
 final class StateA extends NavigationState {}
 
 final class StateB extends NavigationState {}
+
+final class StateC extends NavigationState {}

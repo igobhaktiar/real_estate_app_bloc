@@ -7,3 +7,5 @@ final class EventA extends NavigationEvent{}
 
 final class EventB extends NavigationEvent{}
 
+final class EventC extends NavigationEvent{}
+

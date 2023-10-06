@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({Key? key, required void Function() show}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _LoginPageState();
@@ -15,8 +15,10 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return BlocListener<NavigationBloc, NavigationState>(
       listener: (context, state) {
-        if(state is StateB){
+        if (state is StateB) {
           Navigator.of(context).pushNamed('/home');
+        } else if (state is StateC) {
+          Navigator.of(context).pushNamed('/signUp');
         }
       },
       child: Scaffold(
@@ -122,11 +124,12 @@ class _LoginPageState extends State<LoginPage> {
                                       child: FilledButton(
                                         style: ButtonStyle(
                                             backgroundColor:
-                                            MaterialStateProperty.all<Color>(
-                                                Colors.green)
-                                        ),
+                                                MaterialStateProperty.all<
+                                                    Color>(Colors.green)),
                                         onPressed: () {
-                                          context.read<NavigationBloc>().add(EventB());
+                                          context
+                                              .read<NavigationBloc>()
+                                              .add(EventB());
                                         },
                                         child: Text(
                                           'Log in',
@@ -160,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                                       Center(
                                         child: Row(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: [
                                             Image.asset(
                                               'images/google.png',
@@ -194,7 +197,11 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                 ),
                                 TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    context
+                                        .read<NavigationBloc>()
+                                        .add(EventC());
+                                  },
                                   child: Text(
                                     'Sign up',
                                     style: GoogleFonts.poppins(
